@@ -19551,6 +19551,7 @@ cc_prebuilt_library_shared {
 cc_prebuilt_binary {
     name: "vendor.qti.hardware.display.allocator-service",
     vendor: true,
+    relative_install_path: "hw",
     strip: {
         none: true,
     },
