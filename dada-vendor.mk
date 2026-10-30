@@ -1838,6 +1838,34 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/dada/proprietary/vendor/etc/camera/cameraopt_perf.json:$(TARGET_COPY_OUT_VENDOR)/etc/camera/cameraopt_perf.json \
     vendor/xiaomi/dada/proprietary/vendor/etc/camera/cameraopt_vendor.json:$(TARGET_COPY_OUT_VENDOR)/etc/camera/cameraopt_vendor.json
 
+# Stock vendor ABI used by the camera allocator service
+PRODUCT_COPY_FILES += \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/android.hardware.graphics.allocator-V2-ndk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camera-stock/android.hardware.graphics.allocator-V2-ndk.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/android.hardware.graphics.allocator@2.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camera-stock/android.hardware.graphics.allocator@2.0.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/android.hardware.graphics.allocator@3.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camera-stock/android.hardware.graphics.allocator@3.0.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/android.hardware.graphics.allocator@4.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camera-stock/android.hardware.graphics.allocator@4.0.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/android.hardware.graphics.common@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camera-stock/android.hardware.graphics.common@1.0.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/android.hardware.graphics.common@1.1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camera-stock/android.hardware.graphics.common@1.1.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/android.hardware.graphics.common@1.2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camera-stock/android.hardware.graphics.common@1.2.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/android.hardware.graphics.mapper@2.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camera-stock/android.hardware.graphics.mapper@2.0.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/android.hardware.graphics.mapper@2.1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camera-stock/android.hardware.graphics.mapper@2.1.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/android.hardware.graphics.mapper@3.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camera-stock/android.hardware.graphics.mapper@3.0.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/android.hardware.graphics.mapper@4.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camera-stock/android.hardware.graphics.mapper@4.0.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/libcamera_metadata.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camera-stock/libcamera_metadata.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/libcutils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camera-stock/libcutils.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/libdisplaydebug.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camera-stock/libdisplaydebug.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/libdmabufheap.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camera-stock/libdmabufheap.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/libgralloc.qti.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camera-stock/libgralloc.qti.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/libgralloccore.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camera-stock/libgralloccore.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/libgralloctypes.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camera-stock/libgralloctypes.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/libgrallocutils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camera-stock/libgrallocutils.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/libhardware.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camera-stock/libhardware.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/libhidlbase.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camera-stock/libhidlbase.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/libhidltransport.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camera-stock/libhidltransport.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/libmapperutils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camera-stock/libmapperutils.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/libui.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camera-stock/libui.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/libutils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camera-stock/libutils.so
+
 # Stock gralloc prebuilts for camera HAL compatibility
 PRODUCT_PACKAGES += \
     libgralloccore \
