@@ -2554,7 +2554,6 @@ PRODUCT_PACKAGES += \
     odm_lib_rfsa_adsp_libmialgo_supernight_capture_cdsp_skel_so \
     odm_lib_rfsa_adsp_libmialgo_tracker_cdsp_skel_so \
     odm_lib_rfsa_adsp_libmlawbpostproc_dsp_skel_so \
-    MiuiCamera \
     android.hardware.weaver-service.thales.xml \
     vendor.qti.hardware.lights.service.xml \
     android.hardware.weaver-service.thales \
