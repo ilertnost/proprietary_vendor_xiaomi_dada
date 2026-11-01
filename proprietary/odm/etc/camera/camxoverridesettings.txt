@@ -234,7 +234,7 @@ enableSATWideAlwaysOn=TRUE
 enableAuxAFAssist=TRUE
 
 # SAT PIP
-isSatPipSupported=TRUE
+isSatPipSupported=FALSE
 # PIP role id |UW:1|W:2|T:3|UT:4|
 satPipCameraRoleId=3
 satPipZoomRatioStarted=20.0

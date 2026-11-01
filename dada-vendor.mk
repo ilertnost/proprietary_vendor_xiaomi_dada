@@ -5,27 +5,8 @@
 PRODUCT_SOONG_NAMESPACES += \
     vendor/xiaomi/dada
 
-# Fingerprint HAL modules
 PRODUCT_COPY_FILES += \
-    vendor/xiaomi/dada/proprietary/odm/lib64/hw/fingerprint.goodix_us.default.so:$(TARGET_COPY_OUT_ODM)/lib64/hw/fingerprint.goodix.so \
-    vendor/xiaomi/dada/proprietary/odm/lib64/hw/fingerprint.qcom_us.default.so:$(TARGET_COPY_OUT_ODM)/lib64/hw/fingerprint.qcom_us.so \
-    vendor/xiaomi/dada/proprietary/odm/lib64/libqc_hal.so:$(TARGET_COPY_OUT_ODM)/lib64/libqc_hal.so
-
-# Graphics allocator V1 (needed by camera HAL blobs)
-PRODUCT_COPY_FILES += \
-    vendor/xiaomi/dada/proprietary/vendor/lib64/android.hardware.graphics.allocator-V1-ndk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/android.hardware.graphics.allocator-V1-ndk.so
-
-# Stock libc++ for vendor (needed by camera HAL blobs)
-PRODUCT_COPY_FILES += \
-    vendor/xiaomi/dada/proprietary/vendor/lib64/libc++.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libc++.so
-
-# Product display config (auto brightness)
-PRODUCT_COPY_FILES += \
-    vendor/xiaomi/dada/proprietary/product/etc/displayconfig/display_id_4630946682710401939.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/displayconfig/display_id_4630946682710401939.xml \
-    vendor/xiaomi/dada/proprietary/product/etc/displayconfig/display_id_4630947212918452371.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/displayconfig/display_id_4630947212918452371.xml
-
-# ACDB and audio configs
-PRODUCT_COPY_FILES += \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/libPeripheralStateUtils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libPeripheralStateUtils.so \
     vendor/xiaomi/dada/proprietary/odm/etc/acdbdata/Fluence/Fluence_acdb_cal.acdb:$(TARGET_COPY_OUT_ODM)/etc/acdbdata/Fluence/Fluence_acdb_cal.acdb \
     vendor/xiaomi/dada/proprietary/odm/etc/acdbdata/Fluence/Fluence_workspaceFileXml.qwsp:$(TARGET_COPY_OUT_ODM)/etc/acdbdata/Fluence/Fluence_workspaceFileXml.qwsp \
     vendor/xiaomi/dada/proprietary/odm/etc/audio/mis_head.bin:$(TARGET_COPY_OUT_ODM)/etc/audio/mis_head.bin \
@@ -1175,6 +1156,7 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/dada/proprietary/odm/etc/camera/xiaomi/miuicamerayuv2heic.json:$(TARGET_COPY_OUT_ODM)/etc/camera/xiaomi/miuicamerayuv2heic.json \
     vendor/xiaomi/dada/proprietary/odm/etc/camera/xiaomi/miuicamerayuv2jpeg.json:$(TARGET_COPY_OUT_ODM)/etc/camera/xiaomi/miuicamerayuv2jpeg.json \
     vendor/xiaomi/dada/proprietary/odm/etc/camera/xiaomi/miviphotographerconfig.json:$(TARGET_COPY_OUT_ODM)/etc/camera/xiaomi/miviphotographerconfig.json \
+    vendor/xiaomi/dada/proprietary/odm/etc/camera/xiaomi/miviprocesstimethreshold.json:$(TARGET_COPY_OUT_ODM)/etc/camera/xiaomi/miviprocesstimethreshold.json \
     vendor/xiaomi/dada/proprietary/odm/etc/camera/xiaomi/mivisettings.json:$(TARGET_COPY_OUT_ODM)/etc/camera/xiaomi/mivisettings.json \
     vendor/xiaomi/dada/proprietary/odm/etc/camera/xiaomi/mivistreamformat.json:$(TARGET_COPY_OUT_ODM)/etc/camera/xiaomi/mivistreamformat.json \
     vendor/xiaomi/dada/proprietary/odm/etc/camera/xiaomi/mivivendorstreamconfig.json:$(TARGET_COPY_OUT_ODM)/etc/camera/xiaomi/mivivendorstreamconfig.json \
@@ -1204,6 +1186,7 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/dada/proprietary/odm/etc/camera/xiaomi/watermark/MiSans-Regular.ttf:$(TARGET_COPY_OUT_ODM)/etc/camera/xiaomi/watermark/MiSans-Regular.ttf \
     vendor/xiaomi/dada/proprietary/odm/etc/camera/xiaomi/watermark/MiSansArabicVF.ttf:$(TARGET_COPY_OUT_ODM)/etc/camera/xiaomi/watermark/MiSansArabicVF.ttf \
     vendor/xiaomi/dada/proprietary/odm/etc/camera/xiaomi/watermark/MiSansTibetanVF.ttf:$(TARGET_COPY_OUT_ODM)/etc/camera/xiaomi/watermark/MiSansTibetanVF.ttf \
+    vendor/xiaomi/dada/proprietary/odm/etc/camera/xiaomi/watermark/MiSansVF.ttf:$(TARGET_COPY_OUT_ODM)/etc/camera/xiaomi/watermark/MiSansVF.ttf \
     vendor/xiaomi/dada/proprietary/odm/etc/camera/xiaomi/watermark/Noto-COLRv1-emojicompat.ttf:$(TARGET_COPY_OUT_ODM)/etc/camera/xiaomi/watermark/Noto-COLRv1-emojicompat.ttf \
     vendor/xiaomi/dada/proprietary/odm/etc/camera/xiaomi/watermark/Oxanium-Medium.ttf:$(TARGET_COPY_OUT_ODM)/etc/camera/xiaomi/watermark/Oxanium-Medium.ttf \
     vendor/xiaomi/dada/proprietary/odm/etc/camera/xiaomi/watermark/ic_cv_film_logo.png:$(TARGET_COPY_OUT_ODM)/etc/camera/xiaomi/watermark/ic_cv_film_logo.png \
@@ -1305,10 +1288,19 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/dada/proprietary/odm/etc/camera/xiaomi/watermark/ic_wp_wuhan.webp:$(TARGET_COPY_OUT_ODM)/etc/camera/xiaomi/watermark/ic_wp_wuhan.webp \
     vendor/xiaomi/dada/proprietary/odm/etc/camera/xiaomi/watermark/ic_wp_zhang_jia_jie.webp:$(TARGET_COPY_OUT_ODM)/etc/camera/xiaomi/watermark/ic_wp_zhang_jia_jie.webp \
     vendor/xiaomi/dada/proprietary/odm/etc/camera/xiaomi/watermark/noise_logo.png:$(TARGET_COPY_OUT_ODM)/etc/camera/xiaomi/watermark/noise_logo.png \
+    vendor/xiaomi/dada/proprietary/odm/etc/camera/xiaomi/watermark/oxanium_bold.ttf:$(TARGET_COPY_OUT_ODM)/etc/camera/xiaomi/watermark/oxanium_bold.ttf \
+    vendor/xiaomi/dada/proprietary/odm/etc/camera/xiaomi/watermark/oxanium_medium.ttf:$(TARGET_COPY_OUT_ODM)/etc/camera/xiaomi/watermark/oxanium_medium.ttf \
+    vendor/xiaomi/dada/proprietary/odm/etc/camera/xiaomi/watermark/oxanium_regular.ttf:$(TARGET_COPY_OUT_ODM)/etc/camera/xiaomi/watermark/oxanium_regular.ttf \
     vendor/xiaomi/dada/proprietary/odm/etc/camera/xiaomiSceneDetection.xml:$(TARGET_COPY_OUT_ODM)/etc/camera/xiaomiSceneDetection.xml \
     vendor/xiaomi/dada/proprietary/odm/etc/camera/xiaomismartaeconfig.json:$(TARGET_COPY_OUT_ODM)/etc/camera/xiaomismartaeconfig.json \
     vendor/xiaomi/dada/proprietary/odm/etc/camera/xmi_slmt_4x_1080p.dlc:$(TARGET_COPY_OUT_ODM)/etc/camera/xmi_slmt_4x_1080p.dlc \
     vendor/xiaomi/dada/proprietary/odm/etc/camera/xmi_slmt_4x_720p.dlc:$(TARGET_COPY_OUT_ODM)/etc/camera/xmi_slmt_4x_720p.dlc \
+    vendor/xiaomi/dada/proprietary/odm/etc/dada_2.21.1.prop:$(TARGET_COPY_OUT_ODM)/etc/dada_2.21.1.prop \
+    vendor/xiaomi/dada/proprietary/odm/etc/dada_2.22.0.prop:$(TARGET_COPY_OUT_ODM)/etc/dada_2.22.0.prop \
+    vendor/xiaomi/dada/proprietary/odm/etc/dada_2.29.0.prop:$(TARGET_COPY_OUT_ODM)/etc/dada_2.29.0.prop \
+    vendor/xiaomi/dada/proprietary/odm/etc/dada_in_build.prop:$(TARGET_COPY_OUT_ODM)/etc/dada_in_build.prop \
+    vendor/xiaomi/dada/proprietary/odm/etc/dada_ru_build.prop:$(TARGET_COPY_OUT_ODM)/etc/dada_ru_build.prop \
+    vendor/xiaomi/dada/proprietary/odm/etc/dada_tr_build.prop:$(TARGET_COPY_OUT_ODM)/etc/dada_tr_build.prop \
     vendor/xiaomi/dada/proprietary/odm/etc/df_default.xml:$(TARGET_COPY_OUT_ODM)/etc/df_default.xml \
     vendor/xiaomi/dada/proprietary/odm/etc/disp0/mdss_dsi_o3_36_02_0b_dsc_cmd/cct_pcc.txt:$(TARGET_COPY_OUT_ODM)/etc/disp0/mdss_dsi_o3_36_02_0b_dsc_cmd/cct_pcc.txt \
     vendor/xiaomi/dada/proprietary/odm/etc/disp0/mdss_dsi_o3_36_02_0b_dsc_cmd/clstc/ClstcLut0.txt:$(TARGET_COPY_OUT_ODM)/etc/disp0/mdss_dsi_o3_36_02_0b_dsc_cmd/clstc/ClstcLut0.txt \
@@ -1417,6 +1409,10 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/dada/proprietary/odm/etc/disp0/mdss_dsi_o3_42_0d_0a_dsc_cmd/mi_gc_3.txt:$(TARGET_COPY_OUT_ODM)/etc/disp0/mdss_dsi_o3_42_0d_0a_dsc_cmd/mi_gc_3.txt \
     vendor/xiaomi/dada/proprietary/odm/etc/display/qdcm_calib_data_xiaomi_o3_36_02_0b_cmd_mode_dsc_dsi_panel.json:$(TARGET_COPY_OUT_ODM)/etc/display/qdcm_calib_data_xiaomi_o3_36_02_0b_cmd_mode_dsc_dsi_panel.json \
     vendor/xiaomi/dada/proprietary/odm/etc/display/qdcm_calib_data_xiaomi_o3_42_0d_0a_cmd_mode_dsc_dsi_panel.json:$(TARGET_COPY_OUT_ODM)/etc/display/qdcm_calib_data_xiaomi_o3_42_0d_0a_cmd_mode_dsc_dsi_panel.json \
+    vendor/xiaomi/dada/proprietary/odm/etc/init/android.hardware.weaver-service.thales.rc:$(TARGET_COPY_OUT_ODM)/etc/init/android.hardware.weaver-service.thales.rc \
+    vendor/xiaomi/dada/proprietary/odm/etc/init/miteelog.rc:$(TARGET_COPY_OUT_ODM)/etc/init/miteelog.rc \
+    vendor/xiaomi/dada/proprietary/odm/etc/init/tee-supplicant.rc:$(TARGET_COPY_OUT_ODM)/etc/init/tee-supplicant.rc \
+    vendor/xiaomi/dada/proprietary/odm/etc/init/vendor.qti.hardware.lights.service.rc:$(TARGET_COPY_OUT_ODM)/etc/init/vendor.qti.hardware.lights.service.rc \
     vendor/xiaomi/dada/proprietary/odm/etc/mdss_dsi_o3_36_02_0b_dsc_cmd_mi.xml:$(TARGET_COPY_OUT_ODM)/etc/mdss_dsi_o3_36_02_0b_dsc_cmd_mi.xml \
     vendor/xiaomi/dada/proprietary/odm/etc/mdss_dsi_o3_42_0d_0a_dsc_cmd_mi.xml:$(TARGET_COPY_OUT_ODM)/etc/mdss_dsi_o3_42_0d_0a_dsc_cmd_mi.xml \
     vendor/xiaomi/dada/proprietary/odm/etc/me_config.xml:$(TARGET_COPY_OUT_ODM)/etc/me_config.xml \
@@ -1814,7 +1810,12 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/dada/proprietary/odm/lib64/camera/fdconfigsecure.bin:$(TARGET_COPY_OUT_ODM)/lib64/camera/fdconfigsecure.bin \
     vendor/xiaomi/dada/proprietary/odm/lib64/camera/fdconfigvideo.bin:$(TARGET_COPY_OUT_ODM)/lib64/camera/fdconfigvideo.bin \
     vendor/xiaomi/dada/proprietary/odm/lib64/camera/fdconfigvideolite.bin:$(TARGET_COPY_OUT_ODM)/lib64/camera/fdconfigvideolite.bin \
+    vendor/xiaomi/dada/proprietary/odm/lib64/camera/plugins/com.xiaomi.plugin.offlineyuveis.so:$(TARGET_COPY_OUT_ODM)/lib64/camera/plugins/com.xiaomi.plugin.offlineyuveis.so \
+    vendor/xiaomi/dada/proprietary/odm/lib64/camera/plugins/com.xiaomi.plugin.watermarkV2.so:$(TARGET_COPY_OUT_ODM)/lib64/camera/plugins/com.xiaomi.plugin.watermarkV2.so \
     vendor/xiaomi/dada/proprietary/odm/lib64/camera/qfdserviceconfig.bin:$(TARGET_COPY_OUT_ODM)/lib64/camera/qfdserviceconfig.bin \
+    vendor/xiaomi/dada/proprietary/odm/lib64/hw/fingerprint.goodix_us.so:$(TARGET_COPY_OUT_ODM)/lib64/hw/fingerprint.goodix_us.so \
+    vendor/xiaomi/dada/proprietary/odm/lib64/hw/fingerprint.qcom_us.so:$(TARGET_COPY_OUT_ODM)/lib64/hw/fingerprint.qcom_us.so \
+    vendor/xiaomi/dada/proprietary/odm/lib64/libpendant_wrapper.so:$(TARGET_COPY_OUT_ODM)/lib64/libpendant_wrapper.so \
     vendor/xiaomi/dada/proprietary/odm/lib64/qsn1nrt430.bin:$(TARGET_COPY_OUT_ODM)/lib64/qsn1nrt430.bin \
     vendor/xiaomi/dada/proprietary/odm/lib64/qsn1nrt43180.bin:$(TARGET_COPY_OUT_ODM)/lib64/qsn1nrt43180.bin \
     vendor/xiaomi/dada/proprietary/odm/lib64/qsn1nrt43270.bin:$(TARGET_COPY_OUT_ODM)/lib64/qsn1nrt43270.bin \
@@ -1835,32 +1836,160 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/dada/proprietary/odm/lib64/qsn3all.bin:$(TARGET_COPY_OUT_ODM)/lib64/qsn3all.bin \
     vendor/xiaomi/dada/proprietary/odm/vendor/etc/videoCodecCapability.json:$(TARGET_COPY_OUT_ODM)/vendor/etc/videoCodecCapability.json \
     vendor/xiaomi/dada/proprietary/odm/vendor/etc/videobox.json:$(TARGET_COPY_OUT_ODM)/vendor/etc/videobox.json \
+    vendor/xiaomi/dada/proprietary/product/etc/displayconfig/common_multi_factor_thermal_brightness_control.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/displayconfig/common_multi_factor_thermal_brightness_control.xml \
+    vendor/xiaomi/dada/proprietary/product/etc/displayconfig/display_id_4630946682710401939.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/displayconfig/display_id_4630946682710401939.xml \
+    vendor/xiaomi/dada/proprietary/product/etc/displayconfig/display_id_4630947212918452371.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/displayconfig/display_id_4630947212918452371.xml \
+    vendor/xiaomi/dada/proprietary/product/etc/displayconfig/multi_factor_thermal_brightness_control.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/displayconfig/multi_factor_thermal_brightness_control.xml \
+    vendor/xiaomi/dada/proprietary/product/etc/displayconfig/rhythmic_app_category_list_backup.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/displayconfig/rhythmic_app_category_list_backup.xml \
+    vendor/xiaomi/dada/proprietary/system_ext/etc/seccomp_policy/imsvtdaemon.policy:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/seccomp_policy/imsvtdaemon.policy \
+    vendor/xiaomi/dada/proprietary/system_ext/etc/seccomp_policy/perfservice.policy:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/seccomp_policy/perfservice.policy \
+    vendor/xiaomi/dada/proprietary/vendor/bin/audioadsprpcd:$(TARGET_COPY_OUT_VENDOR)/bin/audioadsprpcd \
+    vendor/xiaomi/dada/proprietary/vendor/bin/hw/audiohalservice.qti:$(TARGET_COPY_OUT_VENDOR)/bin/hw/audiohalservice.qti \
+    vendor/xiaomi/dada/proprietary/vendor/bin/qlm-service:$(TARGET_COPY_OUT_VENDOR)/bin/qlm-service \
     vendor/xiaomi/dada/proprietary/vendor/etc/camera/cameraopt_perf.json:$(TARGET_COPY_OUT_VENDOR)/etc/camera/cameraopt_perf.json \
-    vendor/xiaomi/dada/proprietary/vendor/etc/camera/cameraopt_vendor.json:$(TARGET_COPY_OUT_VENDOR)/etc/camera/cameraopt_vendor.json
-
-# Stock gralloc prebuilts for camera HAL compatibility
-PRODUCT_PACKAGES += \
-    libgralloccore \
-    libgrallocutils \
-    libgralloc.qti \
-    vendor.qti.hardware.display.allocator-service
+    vendor/xiaomi/dada/proprietary/vendor/etc/camera/cameraopt_vendor.json:$(TARGET_COPY_OUT_VENDOR)/etc/camera/cameraopt_vendor.json \
+    vendor/xiaomi/dada/proprietary/vendor/etc/displayconfig/display_id_4630946916234099603.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630946916234099603.xml \
+    vendor/xiaomi/dada/proprietary/vendor/etc/displayconfig/display_id_4630947039571902850.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630947039571902850.xml \
+    vendor/xiaomi/dada/proprietary/vendor/etc/displayconfig/display_id_4630947039571902851.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630947039571902851.xml \
+    vendor/xiaomi/dada/proprietary/vendor/etc/displayconfig/display_id_4630947075271898515.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630947075271898515.xml \
+    vendor/xiaomi/dada/proprietary/vendor/etc/displayconfig/display_layout_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_layout_configuration.xml \
+    vendor/xiaomi/dada/proprietary/vendor/etc/init/audiohalservice_qti.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/audiohalservice_qti.rc \
+    vendor/xiaomi/dada/proprietary/vendor/etc/init/init.qlm-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.qlm-service.rc \
+    vendor/xiaomi/dada/proprietary/vendor/etc/init/qwesd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/qwesd.rc \
+    vendor/xiaomi/dada/proprietary/vendor/etc/seccomp_policy/qwesd@2.0.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/qwesd@2.0.policy \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/android.hardware.graphics.allocator-V1-ndk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/android.hardware.graphics.allocator-V1-ndk.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/android.hardware.power@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/android.hardware.power@1.0.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/android.hardware.power@1.1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/android.hardware.power@1.1.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/android.hardware.power@1.2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/android.hardware.power@1.2.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/android.media.audio.common.types-V2-ndk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/android.media.audio.common.types-V2-ndk.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/android.media.soundtrigger.types-V1-ndk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/android.media.soundtrigger.types-V1-ndk.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/android.hardware.camera.common-V1-ndk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/android.hardware.camera.common-V1-ndk.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/android.hardware.camera.device-V1-ndk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/android.hardware.camera.device-V1-ndk.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/android.hardware.camera.device-V2-ndk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/android.hardware.camera.device-V2-ndk.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/android.hardware.camera.metadata-V1-ndk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/android.hardware.camera.metadata-V1-ndk.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/android.hardware.camera.metadata-V2-ndk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/android.hardware.camera.metadata-V2-ndk.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/android.hardware.camera.provider-V2-ndk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/android.hardware.camera.provider-V2-ndk.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/android.hardware.graphics.allocator-V1-ndk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/android.hardware.graphics.allocator-V1-ndk.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/android.hardware.graphics.allocator-V2-ndk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/android.hardware.graphics.allocator-V2-ndk.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/android.hardware.graphics.allocator@2.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/android.hardware.graphics.allocator@2.0.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/android.hardware.graphics.allocator@3.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/android.hardware.graphics.allocator@3.0.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/android.hardware.graphics.allocator@4.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/android.hardware.graphics.allocator@4.0.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/android.hardware.graphics.common-V5-ndk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/android.hardware.graphics.common-V5-ndk.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/android.hardware.graphics.common@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/android.hardware.graphics.common@1.0.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/android.hardware.graphics.common@1.1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/android.hardware.graphics.common@1.1.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/android.hardware.graphics.common@1.2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/android.hardware.graphics.common@1.2.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/android.hardware.graphics.mapper@2.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/android.hardware.graphics.mapper@2.0.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/android.hardware.graphics.mapper@2.1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/android.hardware.graphics.mapper@2.1.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/android.hardware.graphics.mapper@3.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/android.hardware.graphics.mapper@3.0.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/android.hardware.graphics.mapper@4.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/android.hardware.graphics.mapper@4.0.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/android.hidl.allocator@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/android.hidl.allocator@1.0.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/android.hidl.memory@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/android.hidl.memory@1.0.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/libbase.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/libbase.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/libbinder.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/libbinder.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/libbpf_bcc.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/libbpf_bcc.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/libbpf_minimal.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/libbpf_minimal.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/libc++.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/libc++.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/libcamera_metadata.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/libcamera_metadata.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/libcameraopt.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/libcameraopt.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/libcrypto.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/libcrypto.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/libcutils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/libcutils.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/libdisplayconfig.qti.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/libdisplayconfig.qti.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/libdisplaydebug.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/libdisplaydebug.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/libdmabufheap.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/libdmabufheap.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/libexif.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/libexif.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/libexpat.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/libexpat.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/libfmq.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/libfmq.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/libgralloc.qti.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/libgralloc.qti.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/libgralloccore.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/libgralloccore.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/libgralloctypes.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/libgralloctypes.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/libgrallocutils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/libgrallocutils.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/libhardware.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/libhardware.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/libhidlbase.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/libhidlbase.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/libhidltransport.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/libhidltransport.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/libimage_io.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/libimage_io.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/libion.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/libion.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/libjpeg.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/libjpeg.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/libjsoncpp.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/libjsoncpp.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/liblzma.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/liblzma.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/libmapperutils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/libmapperutils.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/libmemunreachable.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/libmemunreachable.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/libpiex.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/libpiex.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/libpng.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/libpng.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/libprocessgroup.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/libprocessgroup.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/libprotobuf-cpp-full-21.12.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/libprotobuf-cpp-full-21.12.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/libprotobuf-cpp-lite-21.12.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/libprotobuf-cpp-lite-21.12.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/libqdMetaData.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/libqdMetaData.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/libqti_vndfwk_detect.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/libqti_vndfwk_detect.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/libssl.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/libssl.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/libui.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/libui.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/libunwindstack.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/libunwindstack.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/libutils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/libutils.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/libutilscallstack.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/libutilscallstack.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/libvmmem.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/libvmmem.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/libxml2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/libxml2.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/libyuv.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/libyuv.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/libz.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/libz.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/vendor.display.config@2.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/vendor.display.config@2.0.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/vendor.qti.hardware.camera.aon-V2-ndk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/vendor.qti.hardware.camera.aon-V2-ndk.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/vendor.qti.hardware.camera.offlinecamera-V2-ndk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/vendor.qti.hardware.camera.offlinecamera-V2-ndk.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/vendor.qti.hardware.display.config-V2-ndk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/vendor.qti.hardware.display.config-V2-ndk.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/vendor.qti.hardware.display.snapalloc-impl.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/vendor.qti.hardware.display.snapalloc-impl.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/vendor.xiaomi.hardware.camera.injection-V1-ndk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/vendor.xiaomi.hardware.camera.injection-V1-ndk.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/vendor.xiaomi.hardware.camera.injection-client.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/vendor.xiaomi.hardware.camera.injection-client.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/camstock/vendor.xiaomi.hardware.camera.injection-service.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camstock/vendor.xiaomi.hardware.camera.injection-service.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/hw/libaudiocorehal.default.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/libaudiocorehal.default.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/hw/libaudiocorehal.qti.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/libaudiocorehal.qti.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/hw/libaudioeffecthal.qti.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/libaudioeffecthal.qti.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/hw/libsoundtriggerhal.qti.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/libsoundtriggerhal.qti.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/libagm.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libagm.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/libagm_compress_plugin.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libagm_compress_plugin.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/libagm_mixer_plugin.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libagm_mixer_plugin.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/libagm_pcm_plugin.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libagm_pcm_plugin.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/libagmclient.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libagmclient.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/libagmipcservice.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libagmipcservice.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/libalsautils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libalsautils.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/libar-acdb.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libar-acdb.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/libar-gpr.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libar-gpr.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/libar-gsl.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libar-gsl.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/libar-pal.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libar-pal.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/libats.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libats.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/libaudiochargerlistener.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libaudiochargerlistener.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/libaudioplatformconverter.qti.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libaudioplatformconverter.qti.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/libbatterylistener.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libbatterylistener.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/libfmpal.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libfmpal.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/libhfp_pal.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libhfp_pal.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/liblx-ar_util.so:$(TARGET_COPY_OUT_VENDOR)/lib64/liblx-ar_util.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/liblx-osal.so:$(TARGET_COPY_OUT_VENDOR)/lib64/liblx-osal.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/libpalclient.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libpalclient.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/libpaleventnotifier.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libpaleventnotifier.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/libpalipcservice.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libpalipcservice.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/libqwes.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libqwes.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/libsndcardparser.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libsndcardparser.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/libtinyalsa.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libtinyalsa.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/libtinycompress.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libtinycompress.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/libvui_intf.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libvui_intf.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/soundfx/libqcompostprocbundle.so:$(TARGET_COPY_OUT_VENDOR)/lib64/soundfx/libqcompostprocbundle.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/soundfx/libqcomvisualizer.so:$(TARGET_COPY_OUT_VENDOR)/lib64/soundfx/libqcomvisualizer.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/soundfx/libqcomvoiceprocessing.so:$(TARGET_COPY_OUT_VENDOR)/lib64/soundfx/libqcomvoiceprocessing.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/soundfx/libvolumelistener.so:$(TARGET_COPY_OUT_VENDOR)/lib64/soundfx/libvolumelistener.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/vendor.qti.hardware.agm-V1-ndk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.qti.hardware.agm-V1-ndk.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/vendor.qti.hardware.pal-V1-ndk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.qti.hardware.pal-V1-ndk.so \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/vendor.qti.hardware.paleventnotifier-V2-ndk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.qti.hardware.paleventnotifier-V2-ndk.so
 
 PRODUCT_PACKAGES += \
     libSNPESample \
     libcamera2ndk_vendor \
     libcameraobserver \
     libcameraopt \
+    libjpegdecoder_dada \
+    libjpegencoder_dada \
     libmialgo \
     libopencl_loader \
     libopencv_core \
-    libopencv_core_se \
     libopencv_imgproc \
-    libopencv_imgproc_se \
+    libultrahdr_dada \
     libVppAisQnnHtp \
     libVppFrcQnnHtp \
-    libapn_dsp_skel \
-    libhdr_skel \
-    libqsegnetengine_dsp_skel \
     libdpp_engine_skel \
     libdspCV_skel \
     libevadsp \
@@ -1895,6 +2024,7 @@ PRODUCT_PACKAGES += \
     vendor_lib_rfsa_adsp_libtracker_6dof_skel_8450_so \
     vendor_lib_rfsa_adsp_nearby_napp_header \
     vendor_lib_rfsa_adsp_nearby_so \
+    libSurfaceUtil_jni \
     com.qti.actuator.dada_ofilm_ovx9100_ak7316_wide_i_actuator \
     com.qti.actuator.dada_ofilm_s5kjn5_gt9764v_tele3x_ii_actuator \
     com.qti.actuator.dada_sunny_ovx9100_ak7316_wide_ii_actuator \
@@ -2172,6 +2302,7 @@ PRODUCT_PACKAGES += \
     com.xiaomi.immunesystem.hook.mtkhal \
     com.xiaomi.messagecenter \
     com.xiaomi.plugin.ecdengine \
+    ese_weaver_thales \
     camera.qcom.sm8750 \
     camera.qcom \
     com.qti.chi.offline \
@@ -2217,9 +2348,6 @@ PRODUCT_PACKAGES += \
     libarcsoft_turbo_hdr_raw_portrait \
     libbitmlengine \
     libbitmlenginev2 \
-    libbitml_nsp_73na_skel \
-    libbitml_nsp_79na_skel \
-    libbitml_nsp_skel \
     libc++_shared \
     libcalculator \
     libcamera_scene \
@@ -2272,6 +2400,7 @@ PRODUCT_PACKAGES += \
     libellv \
     libfastmessage \
     libfuai_camera_alg \
+    libgf_hal \
     libhandgesture.arcsoft \
     libhdr10plus \
     libheichal \
@@ -2285,6 +2414,7 @@ PRODUCT_PACKAGES += \
     libipebpsstriping480 \
     libiqdbgmgr \
     libisphwsetting \
+    libjc_weaver_transport \
     libjpege \
     libmctfengine_stub \
     libmfGhostDetection \
@@ -2347,7 +2477,6 @@ PRODUCT_PACKAGES += \
     libmmcamera_mfnr_t4 \
     libmmcamera_pdpc \
     libmmfp \
-    libgf_hal \
     libmorpho_Depurple \
     libmpbase \
     libocr_api \
@@ -2379,14 +2508,23 @@ PRODUCT_PACKAGES += \
     libsnpe_config \
     libsupermoon \
     libswregistrationalgo \
+    libteecli \
     libtfestriping \
     libubifocus \
     libvega_common \
     libvideoml \
     libwa_widelens_undistort \
     libxmi_slow_motion_mein \
+    mi_weaver \
+    libapn_dsp_skel \
+    libbitml_nsp_73na_skel \
+    libbitml_nsp_79na_skel \
+    libbitml_nsp_skel \
+    libhdr_skel \
+    libqsegnetengine_dsp_skel \
     vendor.qti.hardware.camera.aon-service-impl \
     vendor.qti.hardware.camera.offlinecamera-service-impl \
+    vendor.qti.qvirt-V1-ndk \
     vendor.xiaomi.hardware.aidl.intentaware-V1-impl \
     vendor.xiaomi.hardware.aidlbgservice-V1-impl \
     vendor.xiaomi.hardware.aidlbgservice-V1-ndk \
@@ -2416,8 +2554,15 @@ PRODUCT_PACKAGES += \
     odm_lib_rfsa_adsp_libmialgo_supernight_capture_cdsp_skel_so \
     odm_lib_rfsa_adsp_libmialgo_tracker_cdsp_skel_so \
     odm_lib_rfsa_adsp_libmlawbpostproc_dsp_skel_so \
+    MiuiCamera \
+    android.hardware.weaver-service.thales.xml \
+    vendor.qti.hardware.lights.service.xml \
+    android.hardware.weaver-service.thales \
     misensor_camera \
-    vendor.qti.camera.provider-service_64
+    vendor.qti.camera.provider-service_64 \
+    vendor.qti.hardware.lights.service \
+    miteelog \
+    tee-supplicant
 
 PRODUCT_PACKAGES += \
     vendor_lib_rfsa_adsp_libSnpeHtpV79Skel_so \
@@ -2448,4 +2593,5 @@ PRODUCT_PACKAGES += \
     vendor_lib64_qsn1rtlp430_bin \
     vendor_lib64_qsn1rtlp43270_bin \
     vendor_lib64_qsn2all_bin \
-    vendor_lib64_qsn3all_bin
+    vendor_lib64_qsn3all_bin \
+    system_ext_priv-app_ims_lib_arm64_libSurfaceUtil_jni_so

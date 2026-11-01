@@ -139,23 +139,22 @@
             <item>com.adobe.reader</item>
         </rhythmic_app_category_read>
         <rhythmic_app_category_read_v3>
+            <item>com.mi.android.globalFileexplorer</item>
+            <item>com.mi.globalbrowser</item>
+            <item>com.google.android.gm</item>
+            <item>com.miui.notes</item>
+            <item>com.openai.chatgpt</item>
+            <item>cn.wps.moffice_eng</item>
+            <item>com.mobilexsoft.ezanvakti</item>
+            <item>wp.wattpad</item>
+            <item>com.crunchyroll.crunchyroid</item>
+            <item>com.naver.linewebtoon</item>
+            <item>org.readera</item>
+            <item>com.pratilipi.mobile.android</item>
+            <item>com.amazon.kindle</item>
+            <item>com.google.android.apps.books</item>
             <item>com.dragon.read</item>
-            <item>com.xs.fm</item>
-            <item>com.kmxs.reader</item>
-            <item>com.qidian.QDReader</item>
-            <item>com.tencent.weread</item>
-            <item>com.jjwxc.reader</item>
-            <item>com.eggflower.read</item>
-            <item>com.shuqi.controller</item>
-            <item>com.qq.reader</item>
-            <item>com.woodleaves.read</item>
-            <item>com.chaozh.iReaderFree</item>
-            <item>com.chaozh.iReader.dj</item>
-            <item>com.kuangxiangciweimao.novel</item>
-            <item>com.bytedance.writer_assistant_flutter</item>
-            <item>com.dj.speed</item>
-            <item>com.duokan.reader</item>
-            <item>com.android.fileexplorer</item>
+            <item>com.anslayer</item>
         </rhythmic_app_category_read_v3>
     </rhythmic_app_category_list>
 </display-config>
